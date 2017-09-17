@@ -7,10 +7,7 @@ class Solution(object):
         :rtype: bool
         """
         y = x.__str__()
-        if x[::-1] == x:
-            return True
-        else:
-            return False
+        return x[::-1] == x
 
     def isPalindrome(self, x):
         """
