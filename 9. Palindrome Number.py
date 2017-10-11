@@ -1,7 +1,7 @@
 # Palindrome 回文
 
 class Solution(object):
-    def isPalindromeExtraSpace(self, x):
+    def isPalindromeString(self, x):
         """
         :type x: int
         :rtype: bool
@@ -14,25 +14,14 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-        if x < 0:
+        if x < 0 or (x % 10 == 0 and x > 0):
             return False
-        power = 1
-        while x > power * 10:
-            power *= 10
-
-        while x >= 10:
-            head = x / power
-            tail = x % 10
-            print(head, tail, x, power)
-            if int(head) != int(tail):
-                return False
-            x = x % power
-            power = power / 10
-            if 0 < x/power < 1:
-                return False
-            x = x/10
-            power = power/10
-        return True
+        rev = 0
+        while x > rev:
+            rev = rev * 10 + x % 10
+            x = x / 10
+            print(rev, x)
+        return rev == x or x == rev / 10
 
 
 solution = Solution()

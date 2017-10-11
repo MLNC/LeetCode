@@ -7,7 +7,7 @@ class Solution(object):
         :type digits: str
         :rtype: List[str]
         """
-        if '' == digits:
+        if not digits:
             return []
         kvmaps = {
             '2': 'abc',
