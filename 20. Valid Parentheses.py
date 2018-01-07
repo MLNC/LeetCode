@@ -4,15 +4,15 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        dict = {'(': ')', '[': ']', '{': '}'}
+        dict = {'(':')','{':'}','[':']'}
         stack = []
         for char in s:
             if char in dict.keys():
                 stack.append(dict[char])
             elif char in dict.values():
-                if stack == [] or stack.pop() != char:
+                if not stack or stack.pop()!=char:
                     return False
-        return True
+        return not stack
 
     def isValidlong(self, s):
         """
