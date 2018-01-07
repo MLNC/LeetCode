@@ -18,6 +18,14 @@ class Solution:
                 if nums[i] + nums[j] == target:
                     return [i, j]
 
+    def twoSumDict(self, nums, target):
+        dict ={}
+        for i in range(len(nums)):
+            if nums[i] in dict:
+                return [i, dict[nums[i]]]
+            else:
+                dict[target - nums[i]] = i
+
 
 solution = Solution()
 print(solution.twoSum([3, 2, 4], 6))

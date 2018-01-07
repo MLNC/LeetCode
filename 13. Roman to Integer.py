@@ -23,7 +23,6 @@ class Solution(object):
         """
         return Solution.recurs(s)
 
-    @staticmethod
     def recurs(s):
         """
         :type s:str
