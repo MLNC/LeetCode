@@ -26,9 +26,11 @@ class Solution(object):
         for i in range(len(buyPrice)):
             max += sellPrice[i] - buyPrice[i]
         return max
+
     def maxProfitShort(self,prices):
+        if not prices or len(prices) == 1:
+            return 0
         result = 0
-        for i in range(1,len(prices)):
-            if prices[i] > prices[i-1]:
-                result += prices[i] - prices[i-1]
+        for i in range(1, len(prices)):
+            result += max(0, prices[i]- prices[i-1])
         return result

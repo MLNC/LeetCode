@@ -13,4 +13,5 @@ class Solution(object):
             if set[i] > len(nums)/2:
                 return i
     def majorityElementSort(self,nums):
-        return [len(nums)/2]
+        nums = sorted(nums)
+        return nums[len(nums) //2]
