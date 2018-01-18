@@ -10,16 +10,11 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        if not head:
-            return None
-        l = []
-        while head:
-            l.append(head)
-            head = head.next
-            l[len(l)-1].next = None
-        result = l.pop()
-        head = result
-        while l:
-            head.next = l.pop()
-            head = head.next
-        return result
+        curr = head
+        prev = None
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        return prev

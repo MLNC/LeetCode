@@ -10,15 +10,8 @@ class Solution(object):
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
-        dummy = ListNode(0)
-        dummy.next = node
-        slow = dummy
-        while node.next:
+        if node.next:
             node.val = node.next.val
-            node = node.next
-            slow = slow.next
-        slow.next = None
-
-    def deleteNodeShort(self, node):  # except tail
-        node.val = node.next.val
-        node.next = node.next.next
+            node.next = node.next.next
+        else:
+            node = None

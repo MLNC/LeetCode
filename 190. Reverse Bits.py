@@ -8,8 +8,8 @@ class Solution:
         return int(b[::-1], 2)
 
     def reverseBitsMani(self, n):
-        ans = 0
-        for i in xrange(32):
-            ans = (ans << 1) + (n & 1)
+        result = 0
+        for i in range(32):
+            result = (result << 1) + (n & 1)
             n >>= 1
-        return ans
+        return result

@@ -11,7 +11,7 @@ class Solution(object):
         :rtype: bool
         """
         if not head:
-            return False
+            return True
 
         fast = head
         slow = head

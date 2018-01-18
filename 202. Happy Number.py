@@ -4,16 +4,15 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        dict = set()
-        n = str(n)
-        while True:
-            count = 0
-            for i in n:
-                count += int(i)*int(i)
-            if count == 1:
-                return True
-            if count not in dict:
-                dict.add(count)
-                n = str(count)
+        set = []
+        while n!=1:
+            curr = 0
+            while n > 0:
+                curr += (n%10) ** 2
+                n = n// 10
+            n = curr
+            if n not in set:
+                set.append(n)
             else:
                 return False
+        return True

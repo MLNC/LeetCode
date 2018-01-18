@@ -5,5 +5,9 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        a, b = map(collections.Counter, (nums1, nums2))
-        return list((a & b).elements())
+        result = []
+        for i in nums1:
+            if i in nums2:
+                result.append(i)
+                nums2.remove(i)
+        return result

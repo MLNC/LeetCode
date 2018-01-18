@@ -5,5 +5,11 @@ class Solution:
         :rtype: int
         """
         letters = 'abcdefghijklmnopqrstuvwxyz'
-        index = [s.index(l) for l in letters if s.count(l) == 1]
-        return min(index) if len(index) > 0 else -1
+        resutls = []
+        for i in letters:
+            if s.count(i) == 1:
+                resutls.append(s.index(i))
+        if len(resutls) != 0:
+            return min(resutls)
+        else:
+            return -1
