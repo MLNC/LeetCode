@@ -17,6 +17,7 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+
         if len(s) == 0:
             return 0
         maxLen = 1
