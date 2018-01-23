@@ -22,12 +22,11 @@ class Solution(object):
             else:
                 return 0
 
-        if str[0] in range(9):
-            for i in range(1, len(str)):
-                try:
-                    num = num * 10 + int(str[i])
-                except:
-                    break
+        i = 0
+        while i < len(str) and str[i] in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+            num = num * 10 + int(str[i])
+            i += 1
+
         num = sign * num
         if num > 2147483647:
             return 2147483647
